@@ -39,6 +39,11 @@ class TableViewController: UITableViewController {
         cell.labelCategory.text = juego.categoria
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let juego = juegos[indexPath.row]
+        performSegue(withIdentifier: "juegoSegue", sender: juego)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -75,14 +80,8 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+         let siguienteVC = segue.destination as! JuegosViewController
+         siguienteVC.juego = sender as? JuegoTarea
     }
-    */
-
 }

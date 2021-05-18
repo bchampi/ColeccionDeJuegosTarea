@@ -13,6 +13,9 @@ class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageGame: UIImageView!
     @IBOutlet weak var fieldName: UITextField!
     @IBOutlet weak var fieldCategory: UITextField!
+
+    @IBOutlet weak var btnAddUpdate: UIButton!
+    @IBOutlet weak var btnDelete: UIButton!
     
     let categories = ["Naturaleza", "Fondos", "Flores", "Playa", "Ríos"]
     
@@ -26,6 +29,15 @@ class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, U
         pickerView.delegate = self
         pickerView.dataSource = self
         fieldCategory.inputView = pickerView
+        
+        if juego != nil {
+            fieldName.text = juego!.titulo
+            fieldCategory.text = juego!.categoria
+            imageGame.image = UIImage(data: (juego!.imagen!) as Data)
+            btnAddUpdate.setTitle("Actualizar", for: .normal)
+        } else {
+            btnDelete.isHidden = true
+        }
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

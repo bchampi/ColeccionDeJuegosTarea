@@ -89,6 +89,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnAddUpdate" destination="nVO-3D-8Rh" id="T6L-1S-bPh"/>
+                        <outlet property="btnDelete" destination="U8M-6D-ahQ" id="4QN-bs-3Hr"/>
                         <outlet property="fieldCategory" destination="a7L-MR-xOA" id="QEZ-th-TBW"/>
                         <outlet property="fieldName" destination="YRJ-95-UJx" id="bwa-Nl-PgW"/>
                         <outlet property="imageGame" destination="2M8-bN-hI8" id="o2Y-Co-gb7"/>
