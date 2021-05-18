@@ -79,7 +79,10 @@ class JuegosViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onPressDelete(_ sender: Any) {
-        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(juego!)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController?.popViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

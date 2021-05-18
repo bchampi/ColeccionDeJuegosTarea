@@ -172,7 +172,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Listado de Imágenes" id="NNI-Wv-8K0">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="gD1-qz-U5e">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="hammer.fill" catalog="system" id="NFm-iA-gct">
+                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteCell" destination="5eI-zN-P3D" id="0K9-R7-OP2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="-1" title="Item" image="plus" catalog="system" style="done" id="gD1-qz-U5e">
                             <connections>
                                 <segue destination="Sjw-Wi-rSo" kind="show" identifier="juegoSegue" id="6ze-Yo-sqI"/>
                             </connections>
@@ -203,6 +209,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hammer.fill" catalog="system" width="64" height="56"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>
